@@ -1,0 +1,48 @@
+\chapter{Einleitung}
+\label{ch:einleitung}
+
+Im Einleitungskapitel werden dem Leser das Thema, die Grundlagen und vergleichbare Arbeiten präsentiert.
+
+Im Folgenden werden ein paar wichtige Tipps zum Erstellen der wissenschaftlichen Arbeit festgehalten. Die vorliegende inhaltliche Strukturierung dient nur zur Orientierung und ist nicht verbindlich. Insbesondere bei Seminararbeiten kann die Struktur abweichen. Beispielsweise ist dort nicht generell eine Implementierung gefordert (und folglich müssen auch keine Ergebnisse beschrieben werden). Auch Zusammenfassung, Danksagung, eidesstattliche Erklärung, Abbildungs- und Tabellenverzeichnis können bei Seminararbeiten weggelassen werden.
+
+
+\section{Referenzierung von Unterkapiteln}
+\label{s:ref} 
+Man sollte direkt jedes Kapitel, Unterkapitel und jede Formel mit einem Label versehen \verb+\label{}+ um eine konsistente Referenzierung im gesamten Dokument zu ermöglichen. Eine Referenzierung im Fließtext lässt sich mittels \verb+\ref{}+ umsetzen.
+
+
+\section{Zeilenumbrüche und Absätze}
+\label{s:zeilenumbruch} 
+Zeilenumbrüche sollten im Quelltext immer mittels einer Leerzeile umgesetzt werden, um eine automatische Texteinrückung in der darauffolgenden Zeile zu ermöglichen. Dies macht das Lesen der Arbeit einfacher. Auf die Verwendung des LaTeX-Kommandos \verb+\\+ sollte verzichtet werden.
+
+
+\section{Einfügen von Grafiken}
+\label{s:grafik} 
+Grafiken sollten mittels der \verb+\figure+-Umgebung eingebettet werden. Um die Druckqualität und Wiederverwendbarkeit der Grafiken für Vorträge, Poster, etc.\ zu erhöhen sind Vektorgrafiken (z.B.\ .eps oder .pdf) zu bevorzugen. Zur Erzeugung und Konvertierung von Vektorgrafiken ist die OpenSource Software \emph{Inkscape} zu empfehlen.
+
+Um mehrere Bilder horizontal anzuordnen, sollte die \verb+\subfigure+-Umgebung verwendet werden. Diese Bilder können dann mit \verb+\subref+ oder \verb+\ref+ referenziert werden und erscheinen im Text als \subref{fig:subfig1} oder \ref{fig:subfig1}.
+
+\begin{figure}
+\begin{center}
+	\subfigure[Das Logo]{
+		\includegraphics[width=0.45\columnwidth]{./img/wwu-logo-neu.pdf}
+		\label{fig:subfig1}
+	}
+	\subfigure[Noch einmal das Logo]{
+		\includegraphics[width=0.45\columnwidth]{./img/wwu-logo-neu.pdf}
+		\label{fig:subfig2}
+	}
+\end{center}
+\caption{Das Logo der WWU}
+\label{fig:histogram}
+\end{figure}
+
+
+\section{Wissenschaftliches Zitieren}
+\label{s:zitat}
+Für das Referenzieren von wissenschaftlicher Literatur wie Fachbüchern, Konferenzpapern und Veröffentlichungen in Wissenschaftsmagazinen gibt es unterschiedliche Konventionen. Je nach Fachrichtung weichen Layout und Zitationsstil sehr stark voneinander ab \cite{jele2010}. Wir empfehlen aus Gründen der Einheitlichkeit die Verwendung der \emph{Bibtex}-Umgebung. Die zitierte Literatur kann ausgelagert in einer Datei (z.B.: Quellen.bib) gepflegt werden und mittels des \verb+\cite+-Kommandos referenziert werden.
+
+
+\section{Zusammenfassung}
+\label{s:zusammenfassung}
+Zum Ende eines längeren Kapitels bietet es sich häufig an eine Zusammenfassung der wichtigsten Punkte zu liefern. Dies erleichtert das Lesen und den Übergang zum nächsten Kapitel.

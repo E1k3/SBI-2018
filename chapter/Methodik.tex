@@ -1,0 +1,41 @@
+\chapter{Methodik}
+\label{ch:methodik}
+
+Im Methodik-Kapitel werden die mathematischen Ausführungen des Verfahrens bzw. des Algorithmus vorgestellt, jedoch technische Details zur Umsetzung und Implementierung (falls nötig) auf ein darauffolgendes Kapitel verlagert.
+
+
+\section{Mathematische Notation}
+\label{s:notation}
+
+Mathematische Formeln können mittels der \verb+\begin{align}...\end{align}+ Umgebung gesetzt werden:
+
+\begin{align}
+f(n) & =
+	\begin{cases}
+		n/2, & \text{wenn }n\text{ gerade,}\\
+		3n+1, & \text{wenn }n\text{ ungerade.}
+	\end{cases}
+\label{eq:f} \\
+%
+g(n) & = \frac{n}{2} \label{eq:g}
+\end{align}
+
+\section{Algorithmus}
+\label{s:algorithmus}
+
+Eigene Algorithmen beschreibt man am Besten mit Hilfe von Pseudo-Code und dem Paket \verb+algorithm+.
+
+\begin{algorithm}
+\caption{Algorithmus}
+\label{alg:alg}
+\begin{algorithmic}
+\algsetup{indent=2em}
+
+\REQUIRE Argument $n\in\mathbb{N}$
+\STATE $a = 0$
+\FOR{ $i=0,\dots,n$}
+	\STATE $a = a + 1$
+\ENDFOR
+\RETURN $a$
+\end{algorithmic}
+\end{algorithm}

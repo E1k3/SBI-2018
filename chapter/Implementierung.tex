@@ -1,0 +1,16 @@
+\chapter{Implementierung}
+\label{ch:implementierung}
+
+In diesem Kapitel werden Technische Details, wie zum Beispiel die Verwendete Laufzeitumgebung, Laufzeitanalyse oder wichtige Implementierungsdetails behandelt.
+Dabei sollte beachtet werden inwiefern diese Angaben für die Arbeit von Bedeutung sind. Die Namen einzelner Funktionsaufrufe oder Klassendiagramme sind zum Beispiel im Allgemeinen für den Leser uninteressant.
+
+\section{Quelltext-Abschnitte}
+Eigene Auszüge aus dem Quelltext bindet man am Einfachsten mit dem Befehl \verb+\lstinputlisting{}+ ein. Das Ergebnis ist in \ref{fig:code} zu sehen.
+Optionen für die Sprache, Tab-Breite etc. von \verb+\lstinputlisting+ können auch am Anfang des Dokuments mit \verb+\lstset{}+ gesetzt werden.
+Das Paket erlaubt mit \verb+firstline=...+ und \verb+lastline=...+ auch die Einbindung von einzelnen Zeilen einer Datei.
+
+%Auch möglich: Kapselung in \begin{figure} ... \end{figure} für flexible Positionierung
+\lstinputlisting[language=C,tabsize=2,frame=single,caption={Codebeispiel}]{src/myTest.m}
+\label{fig:code}
+
+
