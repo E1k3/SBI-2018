@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.1.9)  9 JAN 2019 13:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.12.20)  13 JAN 2019 00:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -472,10 +472,12 @@ File: listings.cfg 2018/09/02 1.7 listings configuration
 ))
 Package: listings 2018/09/02 1.7 (Carsten Heinz)
  (./Hauptdokument.aux
-(./chapter/Titelblatt.aux) (./chapter/Abstract.aux) (./chapter/Danksagung.aux)
-(./chapter/Einleitung.aux) (./chapter/Methodik.aux)
-(./chapter/Implementierung.aux) (./chapter/Ergebnisse.aux)
-(./chapter/Diskussion.aux) (./chapter/Fazit.aux)
+(./chapter/Titelblatt.aux) (./chapter/Abstract.aux) (./chapter/Einleitung.aux
+
+LaTeX Warning: Label `fig:histogram' multiply defined.
+
+) (./chapter/Methodik.aux) (./chapter/Implementierung.aux)
+(./chapter/Ergebnisse.aux) (./chapter/Diskussion.aux) (./chapter/Fazit.aux)
 (./chapter/EidesstattlicheErklaerung.aux))
 \openout1 = `Hauptdokument.aux'.
 
@@ -603,23 +605,14 @@ Package pdftex.def Info: ./img/wwu-logo-neu.pdf  used on input line 3.
 
 
 
-]) [3]
-\openout2 = `chapter/Danksagung.aux'.
-
-
-(./chapter/Danksagung.tex [4
+]) [3] [4
 
 
 
-
-]) [5] [6
-
-
-
-] (./Hauptdokument.toc
+]
+(./Hauptdokument.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
-
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 3.
@@ -630,7 +623,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `Hauptdokument.toc'.
 
- [7] [8
+ [5] [6
 
 
 ]
@@ -654,34 +647,40 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface .
 
-File: ./img/wwu-logo-neu.pdf Graphic file (type pdf)
-<use ./img/wwu-logo-neu.pdf>
-Package pdftex.def Info: ./img/wwu-logo-neu.pdf  used on input line 30.
-(pdftex.def)             Requested size: 179.25114pt x 38.80293pt.
-File: ./img/wwu-logo-neu.pdf Graphic file (type pdf)
-<use ./img/wwu-logo-neu.pdf>
-Package pdftex.def Info: ./img/wwu-logo-neu.pdf  used on input line 34.
-(pdftex.def)             Requested size: 179.25114pt x 38.80293pt.
+<./img/shotgun_sequencing.png, id=107, 100.9371pt x 84.7968pt>
+File: ./img/shotgun_sequencing.png Graphic file (type png)
+<use ./img/shotgun_sequencing.png>
+Package pdftex.def Info: ./img/shotgun_sequencing.png  used on input line 17.
+(pdftex.def)             Requested size: 179.25114pt x 150.60913pt.
 [1
 
 
 
-]) [2]
+ <./img/shotgun_sequencing.png>]
+File: ./img/wwu-logo-neu.pdf Graphic file (type pdf)
+<use ./img/wwu-logo-neu.pdf>
+Package pdftex.def Info: ./img/wwu-logo-neu.pdf  used on input line 72.
+(pdftex.def)             Requested size: 179.25114pt x 38.80293pt.
+File: ./img/wwu-logo-neu.pdf Graphic file (type pdf)
+<use ./img/wwu-logo-neu.pdf>
+Package pdftex.def Info: ./img/wwu-logo-neu.pdf  used on input line 76.
+(pdftex.def)             Requested size: 179.25114pt x 38.80293pt.
+ [2]) [3]
 \openout2 = `chapter/Methodik.aux'.
 
- (./chapter/Methodik.tex
-chapter 2.
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 29.
-) [3
+ (./chapter/Methodik.tex [4
 
 
 
 
 ]
+chapter 2.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 29.
+) [5]
 \openout2 = `chapter/Implementierung.aux'.
 
- (./chapter/Implementierung.tex [4
+ (./chapter/Implementierung.tex [6
 
 
 
@@ -711,38 +710,38 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 3.
-)) [5]
+)) [7]
 \openout2 = `chapter/Ergebnisse.aux'.
 
 
-(./chapter/Ergebnisse.tex [6
+(./chapter/Ergebnisse.tex [8
 
 
 
 
 ]
 chapter 4.
-) [7]
+) [9]
 \openout2 = `chapter/Diskussion.aux'.
 
- (./chapter/Diskussion.tex [8
+ (./chapter/Diskussion.tex [10
 
 
 
 
 ]
 chapter 5.
-) [9]
+) [11]
 \openout2 = `chapter/Fazit.aux'.
 
- (./chapter/Fazit.tex [10
+ (./chapter/Fazit.tex [12
 
 
 
 
 ]
 chapter 6.
-) [11] [12
+) [13] [14
 
 
 
@@ -750,7 +749,7 @@ chapter 6.
 \tf@lof=\write5
 \openout5 = `Hauptdokument.lof'.
 
- [13] [14
+ [15] [16
 
 
 ] (./Hauptdokument.lot)
@@ -758,36 +757,40 @@ chapter 6.
 \openout6 = `Hauptdokument.lot'.
 
 
-(./Hauptdokument.bbl [15] [16
-
-
-]) [17]
-\openout2 = `chapter/EidesstattlicheErklaerung.aux'.
-
- (./chapter/EidesstattlicheErklaerung.tex
-[18
-
+(./Hauptdokument.bbl [17] [18
 
 
 ]) [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
+\openout2 = `chapter/EidesstattlicheErklaerung.aux'.
+
+ (./chapter/EidesstattlicheErklaerung.tex
+[20
+
+
+
+]) [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
  (./Hauptdokument.aux (./chapter/Titelblatt.aux)
-(./chapter/Abstract.aux) (./chapter/Danksagung.aux) (./chapter/Einleitung.aux)
-(./chapter/Methodik.aux) (./chapter/Implementierung.aux)
-(./chapter/Ergebnisse.aux) (./chapter/Diskussion.aux) (./chapter/Fazit.aux)
+(./chapter/Abstract.aux) (./chapter/Einleitung.aux) (./chapter/Methodik.aux)
+(./chapter/Implementierung.aux) (./chapter/Ergebnisse.aux)
+(./chapter/Diskussion.aux) (./chapter/Fazit.aux)
 (./chapter/EidesstattlicheErklaerung.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `Hauptdokument.out' has not changed.
-(rerunfilecheck)             Checksum: 9D30C2020115F760216104CC3075B7D2;824.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
+(rerunfilecheck)             Checksum: 9A86F8B2ED015D69199BF47FBFB2C3B4;809.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 12970 strings out of 492639
- 199648 string characters out of 6135498
- 594069 words of memory out of 5000000
- 16548 multiletter control sequences out of 15000+600000
+ 12967 strings out of 492639
+ 199614 string characters out of 6135496
+ 594565 words of memory out of 5000000
+ 16550 multiletter control sequences out of 15000+600000
  13068 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,16n,66p,9092b,1369s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -802,10 +805,10 @@ e1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/s
 hare/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Hauptdokument.pdf (27 pages, 162883 bytes).
+Output written on Hauptdokument.pdf (27 pages, 386519 bytes).
 PDF statistics:
- 298 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
+ 302 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
  69 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
