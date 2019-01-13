@@ -11,80 +11,91 @@ Zu erst wird aber der Hintergrund in den Bereichen Biologie und Bioinformatik er
 \section{DNA-Sequenzierung}
 \label{s:dna-seq} 
 
-%Bild: DNA-Strang -> Kopien -> Fragmente -> Reads -> Assembly -> Sequenz *?Das von Wikipedia?*
-\begin{figure}[h]
-\begin{center}
-		\includegraphics[width=0.45\columnwidth]{./img/shotgun_sequencing.png}
-\end{center}
-\caption{}
-\label{fig:histogram}
-\end{figure}
-
 Das Ziel der de-novo DNA-Sequenzierung ist die Bestimmung der Nukleotidfolge in DNA ohne ein bereits bekanntes Referenzgenom.
 Wo bei alten Verfahren noch alle Basen nacheinander bestimmt wurden, werden seit dem sogenannten Shotgun Sequencing viele Teilstücke der DNA parallel analysiert.
-Das macht es möglich, lange DNA Stränge mit Verfahren zu sequenzieren, die nur kurze Fragmente verarbeiten können.
+Das macht es möglich, lange DNA Stränge mit Verfahren zu sequenzieren, die nur kurze Fragmente verarbeiten können. %TODO Beispiel Illumina: 150-300bp per read
 Gleichzeitig ermöglicht es die parallele Sequenzierung von mehreren Fragmenten, was den Vorgang extrem beschleunigt.
 
-Die Reihenfolge der DNA-Fragmente aufrecht zu erhalten, ist möglich, aber relativ langsam und aufwendig.
+%Bild: DNA-Strang Kopien -> Fragmente -> Reads -> Assembly -> Sequenz *?Das von Wikipedia?*
+% TODO: Quelle
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics{./img/shotgun_sequencing.png}
+	\end{center}
+	\caption{Shotgun Sequenzierung: Kopien des DNA-Strangs (oben) werden an zufälligen Positionen fragmentiert und sequenziert(darunter), in die korrekte Reihenfolge gebracht (3. von oben) und zur Gesamtsequenz zusammengesetzt (unten)}
+	\label{fig:shotgun-sequencing}
+\end{figure}
+
+Die Reihenfolge der DNA-Fragmente aufrecht zu erhalten, ist möglich, aber relativ langsam.
 Die sogenannten next-gen Sequenzierungsverfahren, welche den aktuell höchsten Durchsatz erzielen, verzichten daher darauf.
 Um trotzdem auf die ursprüngliche Reihenfolge und damit auf die gesamte DNA-Sequenz zurückschließen zu können, wird das Verfahren für mehrere Kopien desselben DNA-Strangs durchgeführt.
 
-Man trennt also mehrere Kopien des Strangs an zufälligen Positionen in ungefähr gleich lange Fragmente.
-Alle Fragmente können unabhängig von einander - und damit parallel - sequenziert werden.
+Wie in \ref{fig:shotgun-sequencing} zu sehen, trennt man also mehrere Kopien des Strangs an zufälligen Positionen in ungefähr gleich lange Fragmente.
+Alle Fragmente können dann unabhängig von einander - und damit parallel - sequenziert werden.
 Das Ergebnis der Sequenzierung eines Fragments wird Read genannt.
-Aufgrund der zufälligen Trennungspositionen überlappen sich die Reads häufig.
-Vorausgesetzt die Abdeckung reicht aus, kann man mit den Überlappungen die Reads in die ursprüngliche Reihenfolge bringen und so die gesuchte DNA-Sequenz bestimmen.
+Aufgrund der zufälligen Trennungspositionen überlappen sich viele dieser Reads.
+Vorausgesetzt die Abdeckung\footnote{Abdeckung (englisch Coverage) beschreibt die Anzahl einzigartiger Reads, die dieselbe Base enthalten.}
+reicht an allen Stellen der Sequenz aus, kann man mit den Überlappungen die Reads in die ursprüngliche Reihenfolge bringen und so die gesuchte DNA-Sequenz bestimmen.
 %Fußnote Abdeckung/Coverage
 Dieser Prozess heißt \textbf{Assembly}.
+
 Wie bereits erwähnt, sind die aktuellen Verfahren zur Bestimmung der Reads nicht fehlerfrei.
-Es kann zum Überspringen (Deletion) oder Vertauschen (Substitution) richtiger Basen oder zur Einfügung (Insertion) falscher Basen kommen
-Kollektiv werden diese Fehler Indels genannt
-%Bild: Assemblygraph *?mit und ohne Indels?*
-Indels können für unterschiedlich große Probleme während der Assembly sorgen
-Fehlerhafte Reads können aufgrund mangelnder Überlappung nicht korrekt eingeordnet werden, dann spricht man von fragmentierter Assembly
-%satz hier drüber: wording
-Größere Probleme entstehen aber, wenn Reads trotz Fehlern zu einer validen Assembly führen
-Bei dieser sog. Misassembly erhält man zum Schluss unter Umständen eine valide, aber falsche Sequenz
-%*?auf erhöhte komplexität der assembly bei fehlerhaften reads eingehen?*
-Diese Komplikationen zu verhindern, ist Aufgabe der Fehlerkorrektur
+Es kann zum Überspringen (Deletion) oder Vertauschen (Substitution) richtiger Basen oder zur Einfügung (Insertion) falscher Basen kommen.
+Kollektiv werden diese Fehler Indels genannt.
 
+Die Assembly üblicherweise durch Überlappungsgraphen oder de Bruijn Graphen bewältigt.
+Überlappungsgraphen können Fehler bis zu einem gewissen Maß kompensieren, bringen allerdings hohe Speicher- und Rechenanforderungen mit sich.
+De Bruijn Graphen sind deutlich resourcensparender, tolerieren aber keine Fehler.
+Aus diesem Grund wird bei großen Datenmengen oft auf de Bruijn Graphen mit vorheriger Fehlerkorrektur zurückgegriffen.
 
+Fehler in den Reads sorgen für verschiedene Probleme bei der Assembly mithilfe eines de Bruijn Graphen:
+\begin{description}
+	\item[Fragmentierte Assembly]\hfill \\
+		Fehlerhafte Reads verhindern das Erkennen von Überlappungen und sorgen für Graphen, die keine valide Assembly zulassen.
+	\item[Misassembly]\hfill \\
+		Fehlerhafte Reads überlappen sich in manchen Fällen mit korrekten Reads und sorgen für eine valide Assembly, die aber eine falsche Sequenz ergibt. \\
+		Dieser Fall ist im Nachhinein schwer zu erkennen.
+\end{description}
+Zusätzlich erhöht sich die Komplexität des Graphen bei fehlerhaften Reads unter Umständen enorm.
 
-Man sollte direkt jedes Kapitel, Unterkapitel und jede Formel mit einem Label versehen \verb+\label{}+ um eine konsistente Referenzierung im gesamten Dokument zu ermöglichen. Eine Referenzierung im Fließtext lässt sich mittels \verb+\ref{}+ umsetzen.
-
-
-\section{Zeilenumbrüche und Absätze}
-\label{s:zeilenumbruch} 
-Zeilenumbrüche sollten im Quelltext immer mittels einer Leerzeile umgesetzt werden, um eine automatische Texteinrückung in der darauffolgenden Zeile zu ermöglichen. Dies macht das Lesen der Arbeit einfacher. Auf die Verwendung des LaTeX-Kommandos \verb+\\+ sollte verzichtet werden.
-
-
-\section{Einfügen von Grafiken}
-\label{s:grafik} 
-Grafiken sollten mittels der \verb+\figure+-Umgebung eingebettet werden. Um die Druckqualität und Wiederverwendbarkeit der Grafiken für Vorträge, Poster, etc.\ zu erhöhen sind Vektorgrafiken (z.B.\ .eps oder .pdf) zu bevorzugen. Zur Erzeugung und Konvertierung von Vektorgrafiken ist die OpenSource Software \emph{Inkscape} zu empfehlen.
-
-Um mehrere Bilder horizontal anzuordnen, sollte die \verb+\subfigure+-Umgebung verwendet werden. Diese Bilder können dann mit \verb+\subref+ oder \verb+\ref+ referenziert werden und erscheinen im Text als \subref{fig:subfig1} oder \ref{fig:subfig1}.
-
-\begin{figure}
-\begin{center}
-	\subfigure[Das Logo]{
-		\includegraphics[width=0.45\columnwidth]{./img/wwu-logo-neu.pdf}
-		\label{fig:subfig1}
-	}
-	\subfigure[Noch einmal das Logo]{
-		\includegraphics[width=0.45\columnwidth]{./img/wwu-logo-neu.pdf}
-		\label{fig:subfig2}
-	}
-\end{center}
-\caption{Das Logo der WWU}
-\label{fig:histogram}
+%Bild: Assemblygraph mit und ohne Indels
+% TODO: Quelle
+\begin{figure}[h]
+	\begin{center}
+		\subfigure[Intakter de Bruijn Graph] {
+			\makebox[.45 \columnwidth]{
+				\includegraphics[scale=.75]{./img/debruijn_correct.png}
+				\label{fig:debruijn-correct}
+			}
+		}
+		\subfigure[Fragmentierter de Bruijn Graph] {
+			\makebox[.45 \columnwidth]{
+				\includegraphics[scale=.75]{./img/debruijn_fragmented.png}
+				\label{fig:debruijn-fragmented}
+			}
+		}
+	\end{center}
+	\caption{De Bruijn Graph des Texts \glqq a long long time\grqq . Oben der Graph aus fehlerfreien Fragmenten, unten der fragmentierte Graph, hervorgerufen durch Substitutionsfehler.}
+	\label{fig:debruijn-graph}
 \end{figure}
 
 
-\section{Wissenschaftliches Zitieren}
-\label{s:zitat}
-Für das Referenzieren von wissenschaftlicher Literatur wie Fachbüchern, Konferenzpapern und Veröffentlichungen in Wissenschaftsmagazinen gibt es unterschiedliche Konventionen. Je nach Fachrichtung weichen Layout und Zitationsstil sehr stark voneinander ab \cite{jele2010}. Wir empfehlen aus Gründen der Einheitlichkeit die Verwendung der \emph{Bibtex}-Umgebung. Die zitierte Literatur kann ausgelagert in einer Datei (z.B.: Quellen.bib) gepflegt werden und mittels des \verb+\cite+-Kommandos referenziert werden.
+\section{Fehlerkorrektur}
+\label{s:error-correction} 
 
+Aufgabe der Fehlerkorrektur ist es, diese Komplikationen zu verhindern. \\
+Da bei der de-novo Sequenzierung kein Referenzgenom zur Verfügung steht, kann die Fehlerkorrektur nur auf Grundlage der Reads geschehen.
+Die üblichen Verfahren stützen sich dabei auf statistische Modelle, um fehlerhafte Reads zu finden und zu verwerfen oder zu korrigieren.
 
-\section{Zusammenfassung}
-\label{s:zusammenfassung}
-Zum Ende eines längeren Kapitels bietet es sich häufig an eine Zusammenfassung der wichtigsten Punkte zu liefern. Dies erleichtert das Lesen und den Übergang zum nächsten Kapitel.
+Das hier behandelte Paper teilt Fehlerkorrekturalgorithmen in drei Kategorien:
+\begin{description}
+	\item[k-mer Frequenzsprektrum Methoden] erzeugen eine Erhebung aller k-mere\footnote{k-mer wird eine k Zeichen lange Teilkette einer Zeichenkette genannt. Beispiel: Die 3-mere von \glqq ABCDE\grqq sind \glqq ABC\grqq \glqq BCD\grqq und \glqq CDE\grqq.}
+	und ihrer Häufigkeiten aus den Reads und ersetzen seltene k-mere durch Häufige. \\
+		Diese Verfahren sind empfindlich gegenüber Wiederholungen in der DNA-Sequenz.
+	\item[Suffix-Tree / -Array Methoden] erzeugen einen Index der Suffixe der Reads in Form eines Arrays oder Baums und verhalten sich ansonsten ähnlich zu den k-mer-basierten Methoden. \\
+		Die variable Länge der Suffixe macht diese Verfahren etwas resistenter gegen Wiederholungen.
+	\item[Überlappungsbasierte Methoden] suchen für jeden zu korrigierenden Read alle überlappenden Reads und korrigieren potenzielle Fehler mit einem MSA\footnote{MSA ist die Abkürzung für Multiple Sequence Alignment und beschreibt das alignen von mehr als drei DNA-Sequenzen. Mit alignment ist an dieser Stelle der methodische Vergleich von Sequenzen gemeint.} %TODO:more?
+ der gefundenen Reads. \\
+		Durch die Verwendung der ganzen Reads sind diese Verfahren nicht anfällig für Wiederholungen, allerdings ist die berechnung des MSA Berechnung sehr langsam.
+\end{description}
+Weitere Vor- und Nachteile der verschiedenen Vorgehensweisen werden später noch erläutert. %TODO: werden sie?
