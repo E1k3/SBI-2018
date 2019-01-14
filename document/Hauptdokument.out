@@ -4,8 +4,12 @@
 \BOOKMARK [0][-]{chapter.2}{Methodik}{}% 4
 \BOOKMARK [1][-]{section.2.1}{Datenstrukturen}{chapter.2}% 5
 \BOOKMARK [2][-]{subsection.2.1.1}{Patternsuche}{section.2.1}% 6
-\BOOKMARK [0][-]{chapter.3}{Implementierung}{}% 7
-\BOOKMARK [1][-]{section.3.1}{Quelltext-Abschnitte}{chapter.3}% 8
-\BOOKMARK [0][-]{chapter.4}{Ergebnisse}{}% 9
-\BOOKMARK [0][-]{chapter.5}{Diskussion}{}% 10
-\BOOKMARK [0][-]{chapter.6}{Fazit}{}% 11
+\BOOKMARK [1][-]{section.2.2}{Fehlerkorrektur}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.1}{Vorbereitung}{section.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.2}{Fehleridentifikation}{section.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.3}{\334berlappungen finden}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.4}{Alignment der gefundenen Reads}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.5}{Fehlerkorrektur durch k-mer Voting}{section.2.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Ergebnisse}{}% 13
+\BOOKMARK [0][-]{chapter.4}{Diskussion}{}% 14
+\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 15

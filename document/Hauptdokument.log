@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.1.13)  14 JAN 2019 19:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.1.13)  14 JAN 2019 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -898,8 +898,7 @@ Package: xparse 2018-10-17 L3 Experimental document command parser
 \l__sn_ya_dim=\dimen279
 )
 (./Hauptdokument.aux (./chapter/Titelblatt.aux) (./chapter/Abstract.aux)
-(./chapter/Einleitung.aux) (./chapter/Methodik.aux)
-(./chapter/Implementierung.aux) (./chapter/Ergebnisse.aux)
+(./chapter/Einleitung.aux) (./chapter/Methodik.aux) (./chapter/Ergebnisse.aux)
 (./chapter/Diskussion.aux) (./chapter/Fazit.aux)
 (./chapter/EidesstattlicheErklaerung.aux))
 \openout1 = `Hauptdokument.aux'.
@@ -1011,7 +1010,7 @@ ABD: EveryShipout initializing macros
 \openout2 = `chapter/Titelblatt.aux'.
 
  (./chapter/Titelblatt.tex
-<./img/wwu-logo-neu.pdf, id=51, 426.59375pt x 92.345pt>
+<./img/wwu-logo-neu.pdf, id=67, 426.59375pt x 92.345pt>
 File: ./img/wwu-logo-neu.pdf Graphic file (type pdf)
 <use ./img/wwu-logo-neu.pdf>
 Package pdftex.def Info: ./img/wwu-logo-neu.pdf  used on input line 3.
@@ -1072,7 +1071,7 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface .
 
-<./img/shotgun_sequencing.png, id=95, 100.9371pt x 84.7968pt>
+<./img/shotgun_sequencing.png, id=115, 100.9371pt x 84.7968pt>
 File: ./img/shotgun_sequencing.png Graphic file (type png)
 <use ./img/shotgun_sequencing.png>
 Package pdftex.def Info: ./img/shotgun_sequencing.png  used on input line 23.
@@ -1085,12 +1084,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-<./img/debruijn_correct.png, id=110, 86.9649pt x 326.9013pt>
+<./img/debruijn_correct.png, id=130, 86.9649pt x 326.9013pt>
 File: ./img/debruijn_correct.png Graphic file (type png)
 <use ./img/debruijn_correct.png>
 Package pdftex.def Info: ./img/debruijn_correct.png  used on input line 70.
 (pdftex.def)             Requested size: 65.2235pt x 245.17537pt.
-<./img/debruijn_fragmented.png, id=111, 138.2766pt x 321.3606pt>
+<./img/debruijn_fragmented.png, id=131, 138.2766pt x 321.3606pt>
 File: ./img/debruijn_fragmented.png Graphic file (type png)
 <use ./img/debruijn_fragmented.png>
 Package pdftex.def Info: ./img/debruijn_fragmented.png  used on input line 76.
@@ -1133,132 +1132,104 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [8] [9]
-\openout2 = `chapter/Implementierung.aux'.
+[8] [9]
+<./img/seed.png, id=205, 333.1647pt x 66.2475pt>
+File: ./img/seed.png Graphic file (type png)
+<use ./img/seed.png>
+Package pdftex.def Info: ./img/seed.png  used on input line 320.
+(pdftex.def)             Requested size: 333.16388pt x 66.24733pt.
+ [10 <./img/seed.png>]
+<./img/extension.png, id=214, 354.6048pt x 137.5539pt>
+File: ./img/extension.png Graphic file (type png)
+<use ./img/extension.png>
+Package pdftex.def Info: ./img/extension.png  used on input line 354.
+(pdftex.def)             Requested size: 354.60391pt x 137.55354pt.
 
- (./chapter/Implementierung.tex [10
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11 <./img/extension.png>] [12]
+<./img/msa.png, id=230, 264.5082pt x 177.5433pt>
+File: ./img/msa.png Graphic file (type png)
+<use ./img/msa.png>
+Package pdftex.def Info: ./img/msa.png  used on input line 454.
+(pdftex.def)             Requested size: 179.25114pt x 120.31876pt.
+<./img/k-mer_voting.png, id=231, 281.6121pt x 177.7842pt>
+File: ./img/k-mer_voting.png Graphic file (type png)
+<use ./img/k-mer_voting.png>
+Package pdftex.def Info: ./img/k-mer_voting.png  used on input line 458.
+(pdftex.def)             Requested size: 179.25114pt x 113.16296pt.
+) [13 <./img/msa.png> <./img/k-mer_voting.png>]
+\openout2 = `chapter/Ergebnisse.aux'.
+
+
+(./chapter/Ergebnisse.tex [14
 
 
 
 
 ]
 chapter 3.
-(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2018/09/02 1.7 listings language file
-)
-(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 13.
- (./src/myTest.m
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 3.
+) [15]
+\openout2 = `chapter/Diskussion.aux'.
 
-(/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 3.
-)) [11]
-\openout2 = `chapter/Ergebnisse.aux'.
-
-
-(./chapter/Ergebnisse.tex [12
+ (./chapter/Diskussion.tex [16
 
 
 
 
 ]
 chapter 4.
-) [13]
-\openout2 = `chapter/Diskussion.aux'.
+) [17]
+\openout2 = `chapter/Fazit.aux'.
 
- (./chapter/Diskussion.tex [14
+ (./chapter/Fazit.tex [18
 
 
 
 
 ]
 chapter 5.
-) [15]
-\openout2 = `chapter/Fazit.aux'.
-
- (./chapter/Fazit.tex [16
+) [19] (./Hauptdokument.bbl [20
 
 
 
-
-]
-chapter 6.
-) [17] [18
-
-
-
-] (./Hauptdokument.lof
-Overfull \hbox (21.22795pt too wide) in paragraph at lines 3--3
- \OT1/cmr/m/n/12 den an zuf[]alligen Po-si-tio-nen frag-men-tiert und se-quen-z
-iert(darunter), 
- []
-
-)
-\tf@lof=\write6
-\openout6 = `Hauptdokument.lof'.
-
- [19] [20
-
-
-] (./Hauptdokument.lot)
-\tf@lot=\write7
-\openout7 = `Hauptdokument.lot'.
-
- (./Hauptdokument.bbl [21] [22
-
-
-]) [23]
-\openout2 = `chapter/EidesstattlicheErklaerung.aux'.
-
-
-(./chapter/EidesstattlicheErklaerung.tex [24
-
-
-
-]) [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
+]) [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
  (./Hauptdokument.aux
 (./chapter/Titelblatt.aux) (./chapter/Abstract.aux) (./chapter/Einleitung.aux)
-(./chapter/Methodik.aux) (./chapter/Implementierung.aux)
-(./chapter/Ergebnisse.aux) (./chapter/Diskussion.aux) (./chapter/Fazit.aux)
-(./chapter/EidesstattlicheErklaerung.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
+(./chapter/Methodik.aux) (./chapter/Ergebnisse.aux) (./chapter/Diskussion.aux)
+(./chapter/Fazit.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `Hauptdokument.out' has not changed.
-(rerunfilecheck)             Checksum: 429D40CFD3E6564CEF5CCC0F57AE3593;586.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
+(rerunfilecheck)             Checksum: 893AB3FCAA0B08E6AA0E2AC8699AA64A;919.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 31954 strings out of 492639
- 593496 string characters out of 6135497
- 965200 words of memory out of 5000000
- 35286 multiletter control sequences out of 15000+600000
- 543759 words of font info for 67 fonts, out of 8000000 for 9000
+ 31613 strings out of 492639
+ 590718 string characters out of 6135497
+ 784328 words of memory out of 5000000
+ 34976 multiletter control sequences out of 15000+600000
+ 544531 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,12n,76p,9092b,1369s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,12n,76p,9092b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Hauptdokument.pdf (31 pages, 477763 bytes).
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Hauptdokument.pdf (27 pages, 837019 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 79 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 282 compressed objects within 3 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

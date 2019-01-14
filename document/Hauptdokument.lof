@@ -13,7 +13,12 @@
 \contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Resultierender Suffix-Array und FM-Index f\IeC {\"u}r die Zeichenfolge \glqq atgattatc\$\grqq \relax }}{7}{figure.caption.6}
 \contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Patternsuche in Suffix-Array\relax }}{8}{figure.caption.7}
 \contentsline {figure}{\numberline {\relax 2.8}{\ignorespaces Patternsuche in FM-Index\relax }}{9}{figure.caption.8}
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 2.9}{\ignorespaces Visualisierung der Seed Position in einem fehlerhaften Query Read\relax }}{10}{figure.caption.9}
+\contentsline {figure}{\numberline {\relax 2.10}{\ignorespaces Extension Baum von 50 gefundenen Reads.\relax }}{11}{figure.caption.10}
+\contentsline {figure}{\numberline {\relax 2.11}{\ignorespaces FM-Index der Reads \glqq aatgc\grqq , \glqq aatgc\grqq und \glqq catgc\grqq mit Trennzeichen \glqq \$\grqq . Von dem Intervall des Seeds \glqq atgc\grqq , $[5,7]$ ausgehend, entstehen durch das LF-Mapping mit allen vorhandenen Zeichen zwei Pfade: \glqq a\grqq , $[3,4]$ und \glqq c\grqq , $[8,8]$\relax }}{12}{figure.caption.11}
+\contentsline {figure}{\numberline {\relax 2.12}{\ignorespaces \relax }}{13}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSA Matrix}}}{13}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {k-mer Voting}}}{13}{figure.caption.12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

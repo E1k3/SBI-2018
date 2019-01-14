@@ -5,8 +5,12 @@
 \contentsline {chapter}{\numberline {2}Methodik}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Datenstrukturen}{5}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Patternsuche}{6}{subsection.2.1.1}
-\contentsline {chapter}{\numberline {3}Implementierung}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Quelltext-Abschnitte}{11}{section.3.1}
-\contentsline {chapter}{\numberline {4}Ergebnisse}{13}{chapter.4}
-\contentsline {chapter}{\numberline {5}Diskussion}{15}{chapter.5}
-\contentsline {chapter}{\numberline {6}Fazit}{17}{chapter.6}
+\contentsline {section}{\numberline {2.2}Fehlerkorrektur}{9}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Vorbereitung}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Fehleridentifikation}{10}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}\IeC {\"U}berlappungen finden}{10}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Alignment der gefundenen Reads}{11}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Fehlerkorrektur durch k-mer Voting}{12}{subsection.2.2.5}
+\contentsline {chapter}{\numberline {3}Ergebnisse}{15}{chapter.3}
+\contentsline {chapter}{\numberline {4}Diskussion}{17}{chapter.4}
+\contentsline {chapter}{\numberline {5}Fazit}{19}{chapter.5}
