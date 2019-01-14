@@ -5,6 +5,14 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intakter de Bruijn Graph}}}{3}{figure.caption.4}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Fragmentierter de Bruijn Graph}}}{3}{figure.caption.4}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Suffixe\relax }}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Rotationen\relax }}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Vorstufen von Suffix-Array und FM-Index f\IeC {\"u}r die Zeichenfolge \glqq atgattatc\$\grqq \relax }}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Suffix-Array\relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces FM-Index\relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Resultierender Suffix-Array und FM-Index f\IeC {\"u}r die Zeichenfolge \glqq atgattatc\$\grqq \relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Patternsuche in Suffix-Array\relax }}{8}{figure.caption.7}
+\contentsline {figure}{\numberline {\relax 2.8}{\ignorespaces Patternsuche in FM-Index\relax }}{9}{figure.caption.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

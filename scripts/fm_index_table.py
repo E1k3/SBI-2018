@@ -46,12 +46,12 @@ def create_latex_table(strings: List[str],
     latex_table: str = "\\begin{tabular}{" + table_spec + "}\n"
     for string in strings:
         if row_seperator:
-            latex_table += "\t\\hline\n"
+            latex_table += "    \\hline\n"
         string += ''.join(' ' for i in range(column_count - len(string)))
-        latex_table += '\t' + " & ".join(string) + " \\\\\n"
+        latex_table += "    " + " & ".join(string) + " \\\\\n"
 
     if row_seperator:
-        latex_table += "\t\\hline\n"
+        latex_table += "    \\hline\n"
     latex_table += "\\end{tabular}"
 
     return latex_table
@@ -64,8 +64,10 @@ if __name__ == "__main__":
     parser.add_argument("-b", "--bw_transform", action="store_true")
     parser.add_argument("-s", "--suffixes", action="store_true")
     parser.add_argument("-a", "--suffix_array", action="store_true")
-    parser.add_argument("-l", "--latex_table", action="store_true")
     parser.add_argument("--all", action="store_true")
+    parser.add_argument("-l", "--latex_table", action="store_true")
+    parser.add_argument("-c", "--column_seperator", action="store_true")
+    parser.add_argument("-r", "--row_seperator", action="store_true")
     args = parser.parse_args()
 
     functions = [(args.offsets or args.all,      create_offsets,      "Offsets"),
@@ -77,8 +79,9 @@ if __name__ == "__main__":
         if key:
             data: str = func(args.sequence)
             print(f"--- {label} ---")
-            for row in data:
-                print(row)
             if args.latex_table:
-                print(f"\n{create_latex_table(data)}")
+                print(create_latex_table(data, args.column_seperator, args.row_seperator))
+            else:
+                for row in data:
+                    print(row)
             print()

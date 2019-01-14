@@ -8,23 +8,267 @@ Im Folgenden werden daher zuerst die Datenstrukturen behandelt.
 \section{Datenstrukturen}
 \label{sec:datenstrukturen}
 
-Der FM-index bietet Möglichkeiten zur schnellen Patternsuche bei sehr geringer Speicherkomplexität.
-Die Funktionsweise und die Grunde für die Resourcensparsamkeit lassen sich am besten im Vergleich zum Suffix-Array erläutern.
+Der FM-index ist eine Datenstruktur für Zeichenfolgen, die auf der Burrows Wheeler Transformation (BWT) basiert.
 
-\begin{tabular}{ | c | c | c | c | c | c | c | }
-        \hline
-        a & b & c & d & e & f & g \\
-        \hline
-        b & c & d & e & f & g &   \\
-        \hline
-        c & d & e & f & g &   &   \\
-        \hline
-        d & e & f & g &   &   &   \\
-        \hline
-        e & f & g &   &   &   &   \\
-        \hline
-        f & g &   &   &   &   &   \\
-        \hline
-        g &   &   &   &   &   &   \\
-        \hline
-\end{tabular}
+Die BWT ist ein Algorithmus, der aus einer beliebigen Zeichenfolge eine Permutation dieser Folge und einen Index erzeugt, mit dem Effekt, dass die erhaltene Permutation in der Regel leichter zu komprimieren ist.
+Eine Rücktransformation ermöglicht dann die Wiederherstellung der ursprünglichen Zeichenfolge.
+%TODO:Quelle Burrows Wheeler Transform
+
+Der FM-Index wird ähnlich zur BWT konstruiert, speichert aber zusätzliche Daten, um schnelle Patternsuche bei immer noch sehr geringer Speicherkomplexität zu ermöglichen.
+Die Funktionsweise und die Gründe für die Resourcensparsamkeit lassen sich am besten im Vergleich zum Suffix-Array erläutern.
+
+\newcolumntype{a}{>{\color{gray}}c}
+\newcolumntype{b}{>{\columncolor{lightgray}}c}
+\begin{figure}[h]
+	\begin{center}
+		\begin{tabular}{ c || c c c c c c c c c c | }
+			\hline
+			0 & a & t & g & a & t & t & a & t & c & \$ \\
+			\hline
+			1 & t & g & a & t & t & a & t & c & \$ &   \\
+			\hline
+			2 & g & a & t & t & a & t & c & \$ &   &   \\
+			\hline
+			3 & a & t & t & a & t & c & \$ &   &   &   \\
+			\hline
+			4 & t & t & a & t & c & \$ &   &   &   &   \\
+			\hline
+			5 & t & a & t & c & \$ &   &   &   &   &   \\
+			\hline
+			6 & a & t & c & \$ &   &   &   &   &   &   \\
+			\hline
+			7 & t & c & \$ &   &   &   &   &   &   &   \\
+			\hline
+			8 & c & \$ &   &   &   &   &   &   &   &   \\
+			\hline
+			9 & \$ &   &   &   &   &   &   &   &   &   \\
+			\hline
+		\end{tabular}
+		\caption{Suffixe}%
+		\label{tbl:suffixes}
+	\end{center}
+	\begin{center}
+		\begin{tabular}{ c || c c c c c c c c c c | }
+			\hline
+			0 & a & t & g & a & t & t & a & t & c & \$ \\
+			\hline
+			1 & t & g & a & t & t & a & t & c & \$ & a \\
+			\hline
+			2 & g & a & t & t & a & t & c & \$ & a & t \\
+			\hline
+			3 & a & t & t & a & t & c & \$ & a & t & g \\
+			\hline
+			4 & t & t & a & t & c & \$ & a & t & g & a \\
+			\hline
+			5 & t & a & t & c & \$ & a & t & g & a & t \\
+			\hline
+			6 & a & t & c & \$ & a & t & g & a & t & t \\
+			\hline
+			7 & t & c & \$ & a & t & g & a & t & t & a \\
+			\hline
+			8 & c & \$ & a & t & g & a & t & t & a & t \\
+			\hline
+			9 & \$ & a & t & g & a & t & t & a & t & c \\
+			\hline
+		\end{tabular}
+		\caption{Rotationen}%
+		\label{tbl:rotations}
+	\end{center}
+	\caption{Vorstufen von Suffix-Array und FM-Index für die Zeichenfolge \glqq atgattatc\$\grqq}
+	\label{fig:construction}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{center}
+		\begin{tabular}{ c || c c c c c c c c c c | }
+			\hline
+			9 & \$ &   &   &   &   &   &   &   &   &   \\
+			\hline
+			6 & a & t & c & \$ &   &   &   &   &   &   \\
+			\hline
+			0 & a & t & g & a & t & t & a & t & c & \$ \\
+			\hline
+			3 & a & t & t & a & t & c & \$ &   &   &   \\
+			\hline
+			8 & c & \$ &   &   &   &   &   &   &   &   \\
+			\hline
+			2 & g & a & t & t & a & t & c & \$ &   &   \\
+			\hline
+			5 & t & a & t & c & \$ &   &   &   &   &   \\
+			\hline
+			7 & t & c & \$ &   &   &   &   &   &   &   \\
+			\hline
+			1 & t & g & a & t & t & a & t & c & \$ &   \\
+			\hline
+			4 & t & t & a & t & c & \$ &   &   &   &   \\
+			\hline
+		\end{tabular}
+		\caption{Suffix-Array}
+		\label{tbl:suffix-array}
+	\end{center}
+	\begin{center}
+		\begin{tabular}{ c || b a a a a a a a a b | }
+			  & \cellcolor{white} F &   &   &   &   &   &   &   &   & \cellcolor{white}L \\
+			\hline
+			\hline
+			9 & \$ & a & t & g & a & t & t & a & t & c$_1$ \\
+			\hline
+			6 & a$_1$ & t & c & \$ & a & t & g & a & t & t$_1$ \\
+			\hline
+			0 & a$_2$ & t & g & a & t & t & a & t & c & \$ \\
+			\hline
+			3 & a$_3$ & t & t & a & t & c & \$ & a & t & g$_1$ \\
+			\hline
+			8 & c$_1$ & \$ & a & t & g & a & t & t & a & t$_2$ \\
+			\hline
+			2 & g$_1$ & a & t & t & a & t & c & \$ & a & t$_3$ \\
+			\hline
+			5 & t$_1$ & a & t & c & \$ & a & t & g & a & t$_4$ \\
+			\hline
+			7 & t$_2$ & c & \$ & a & t & g & a & t & t & a$_1$ \\
+			\hline
+			1 & t$_3$ & g & a & t & t & a & t & c & \$ & a$_2$ \\
+			\hline
+			4 & t$_4$ & t & a & t & c & \$ & a & t & g & a$_3$ \\
+			\hline
+		\end{tabular}
+		\caption{FM-Index}
+		\label{tbl:fm-index}
+	\end{center}
+	\caption{Resultierender Suffix-Array und FM-Index für die Zeichenfolge \glqq atgattatc\$\grqq}
+	\label{fig:finished}
+\end{figure}
+
+Wie in den Tabellen \ref{tbl:suffixes} und \ref{tbl:rotations} zu sehen ist, beginnt man bei beiden Datenstrukturen damit, alle Suffixe der Zeichenfolge zu erzeugen.
+Im Fall des FM-Index wird jede Zeile mit dem Anfang der Zeichenfolge aufgefüllt, sodass sich die Rotationen der Zeichenfolge ergeben.
+Zusätzlich werden die Suffixpositionen in der Zeichenfolge in einer extra Spalte festgehalten.
+
+Das Ergebnis dieser Operation wird dann lexikographisch sortiert. In Tabelle \ref{tbl:suffix-array} ist der fertige Suffix Array zu sehen.
+Während bei dem Suffix-Array das gesamte Array gespeichert werden muss, kann beim FM-Index auf einen großen Teil der Daten verzichtet werden.
+
+\begin{itemize}
+	\item Aus den Rotationen müssen nur die Spalten F und L gespeichert werden.
+	\item Die Spalte F ist aufsteigend sortiert und kann daher bei einem kleinen Alphabet wie $\{A, C, G, T, \$\}$ sehr stark komprimiert werden.
+	\item Für den Suchalgorithmus müssen die Ränge der Zeichen in der letzten Zeile (in Tabelle \ref{tbl:fm-index} als tiefgestellte Indizes sichtbar) bekannt sein.
+		Diese kann man bei jeder Suche neu berechnen oder speichern.
+		In den meisten Fällen wird ein hybrider Ansatz verwendet, bei dem ein Bruchteil der Ränge vorberechnet und gespeichert wird, um die Berechnung der Übrigen zu beschleunigen.
+	\item Die Positionen in der usprünglichen Zeichenfolge (in den Tabellen \ref{fig:finished} als getrennte Spalte sichtbar) können genau wie die Ränge teilweise vorberechnet werden, um einen guten Kompromiss zwischen Speicherverbrauch und Rechenaufwand zu erhalten.
+\end{itemize}
+
+Diese Optimierungen sorgen dafür, dass ein Suffix-Array in der Regel ein vielfaches an Speicher benötigt als ein FM-Index.
+
+\subsection{Patternsuche}
+\label{subsec:patternsearch}
+
+Die Patternsuche im Suffix-Array ist trivial, da es für jedes Vorkommen des Patterns einen Suffix geben muss, der mit dem Pattern beginnt.
+Weil alle Suffixe lexikographisch sortiert sind, liegen alle Suffixe, die mit dem Pattern beginnen hintereinander im Array.
+Es genügt also den Ersten und den Letzten der Suffixe durch wiederholte binäre Suche zu finden und mithilfe der ersten Spalte die Position aller dazwischen liegenden herauszufinden.
+\\
+Beispiel: Suche nach \glqq att\grqq (siehe auch Tabelle \ref{tbl:suffix-array-search})
+\begin{enumerate}
+	\item Durch binäre Suche das Intervall der Suffixe finden, dass mit \glqq a\grqq beginnt (blau).
+		Wenn die erste Spalte des Arrays durch RLE\footnote{RLE steht für Run Length Encoding und ist eine Kompression, die bei Daten mit vielen Symbolwiederholungen eingesetzt wird. Beispiel: \glqq aaaaabbb\grqq wird komprimiert zu \glqq a5b3\grqq}
+		komprimiert wurde, kann dieser Schritt ohne binäre Suche in konstanter Zeit stattfinden.
+	\item Mit binärer Suche das Teilintervall finden, dessen zweites Zeichen \glqq t\grqq ist (orange).
+	\item Schritt 2 für das nächste Zeichen wiederholen (rot).
+	\item Den gefundenen Suffix anhand der extra Spalte seiner Position in der Zeichenfolge zuordnen (Index 3)
+\end{enumerate}
+
+\begin{figure}[h]
+	\begin{center}
+		\begin{tabular}{ c || c c c c c c c c c c | }
+			\hline
+			9 & \$ &   &   &   &   &   &   &   &   &   \\
+			\hline
+			6 & \cellcolor{SkyBlue} a & \cellcolor{BurntOrange} t & c & \$ &   &   &   &   &   &   \\
+			\hline
+			0 & \cellcolor{SkyBlue} a & \cellcolor{BurntOrange} t & g & a & t & t & a & t & c & \$ \\
+			\hline
+			3 & \cellcolor{SkyBlue} a & \cellcolor{BurntOrange} t & \cellcolor{RubineRed} t & a & t & c & \$ &   &   &   \\
+			\hline
+			8 & c & \$ &   &   &   &   &   &   &   &   \\
+			\hline
+			2 & g & a & t & t & a & t & c & \$ &   &   \\
+			\hline
+			5 & t & a & t & c & \$ &   &   &   &   &   \\
+			\hline
+			7 & t & c & \$ &   &   &   &   &   &   &   \\
+			\hline
+			1 & t & g & a & t & t & a & t & c & \$ &   \\
+			\hline
+			4 & t & t & a & t & c & \$ &   &   &   &   \\
+			\hline
+		\end{tabular}
+		\caption{Patternsuche in Suffix-Array}
+		\label{tbl:suffix-array-search}
+	\end{center}
+\end{figure}
+
+Die Patternsuche in einem FM-Index ist etwas komplizierter.
+Man sucht das Pattern von hinten nach vorne durch ein sogennantes LF-Mapping.
+Die Eigenschaft, die dieses Mapping ermöglicht, ist, dass der Zeichenrang in der letzten Zeile, dem der ersten Zeile entspricht.
+Das dritte \glqq a\grqq in der Spalte L ist in der ursprünglichen Folge also dasselbe Zeichen, wie das dritte \glqq a\grqq in der Spalte F.
+
+Auch im FM-Index liegen alle Vorkommen des Patterns in einem zusammenhängenden Intervall.
+\\
+Das selbe Beispiel: Suche nach \glqq att\grqq (siehe auch Tabelle \ref{tbl:fm-index-search})
+\begin{enumerate}
+	\item In konstanter Zeit das Intervall von F suchen, dass mit \glqq t\grqq beginnt (blau).
+	\item In dem selben Intervall in L linear nach dem nächsten Zeichen \glqq t\grqq suchen (orange).
+	\item Das gefundene \glqq t\grqq anhand des Rangs in konstanter Zeit in F wieder finden.
+	\item Schritt 2 und 3 mit dem Zeichen \glqq a\grqq wiederholen (rot).
+	\item Den gefundenen Eintrag anhand der extra Spalte seiner Position in der Zeichenfolge zuordnen (Index 3)
+\end{enumerate}
+
+\begin{figure}[h]
+	\begin{center}
+		\begin{tabular}{ c || b a a a a a a a a b | }
+			  & \cellcolor{white} F &   &   &   &   &   &   &   &   & \cellcolor{white}L \\
+			\hline
+			\hline
+			9 & \$ & a & t & g & a & t & t & a & t & c$_1$ \\
+			\hline
+			6 & $_1$ & t & c & \$ & a & t & g & a & t & t$_1$ \\
+			\hline
+			0 & a$_2$ & t & g & a & t & t & a & t & c & \$ \\
+			\hline
+			3 & \cellcolor{RubineRed} a$_3$ \tikzmark{a2} & t & t & a & t & c & \$ & a & t & g$_1$ \\
+			\hline
+			8 & c$_1$ & \$ & a & t & g & a & t & t & a & t$_2$ \\
+			\hline
+			2 & g$_1$ & a & t & t & a & t & c & \$ & a & t$_3$ \\
+			\hline
+			\cellcolor{SkyBlue} 5 & t$_1$ \tikzmark{t1} & a & t & c & \$ & a & t & g & a & \tikzmark{t2} \cellcolor{BurntOrange}t$_4$ \\
+			\hline
+			\cellcolor{SkyBlue} 7 & t$_2$ & c & \$ & a & t & g & a & t & t & a$_1$ \\
+			\hline
+			\cellcolor{SkyBlue} 1 & t$_3$ & g & a & t & t & a & t & c & \$ & a$_2$ \\
+			\hline
+			\cellcolor{SkyBlue} 4 & \cellcolor{BurntOrange} t$_4$ \tikzmark{t3} & t & a & t & c & \$ & a & t & g & \tikzmark{a1} \cellcolor{RubineRed}a$_3$ \\
+			\hline
+		\end{tabular}
+		\begin{tikzpicture}[overlay, remember picture, yshift=.25\baselineskip, shorten >=.5pt, shorten <=.5pt]
+			\draw [->, thick] ({pic cs:t1}) -- ({pic cs:t2});
+			\draw [->, thick] ({pic cs:t2}) [bend right] to ({pic cs:t3});
+			\draw [->, thick] ({pic cs:t3}) -- ({pic cs:a1});
+			\draw [->, thick] ({pic cs:a1}) [bend right] to ({pic cs:a2});
+		\end{tikzpicture}
+
+		\caption{Patternsuche in FM-Index}
+		\label{tbl:fm-index-search}
+	\end{center}
+\end{figure}
+
+Per LF-Mapping ist man mit den erwähnten Optimierungen also in der Lage mit geringer Komplexität nach Patterns zu suchen und die Speichereffizienz ermöglicht es im Vergleich zum Suffix-Array bei der selben Speichermenge deutlich größere Datenmengen zu verarbeiten.
+
+Ein FM-Index des Menschlichen Genoms (ca. 3Mbp\footnote{Mbp steht für Mega Basenpaare, also 1 Milliarde Basenpaare} mit 2 Bits pro Base) braucht ca. 1,5GB Speicher, während ein Suffix-Array ca. 12GB braucht.
+
+\section{Fehlerkorrektur}
+\label{sec:methodik-fehlerkorrektur}
+
+Im folgenden geht es um den Ablauf des Fehlerkorrekturalgorithmus. \\
+Dieser lässt sich grob in folgende Schritte einteilen:
+
+\begin{enumerate}
+	\item
+\end{enumerate}
