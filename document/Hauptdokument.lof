@@ -1,7 +1,7 @@
 \babel@toc {ngerman}{}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 1.1}{\ignorespaces Shotgun Sequenzierung: Kopien des DNA-Strangs (oben) werden an zuf\IeC {\"a}lligen Positionen fragmentiert und sequenziert(darunter), in die korrekte Reihenfolge gebracht (3. von oben) und zur Gesamtsequenz zusammengesetzt (unten)\relax }}{1}{figure.caption.3}
-\contentsline {figure}{\numberline {\relax 1.2}{\ignorespaces De Bruijn Graph des Texts \glqq a long long time\grqq . Oben der Graph aus fehlerfreien Fragmenten, unten der fragmentierte Graph, hervorgerufen durch einen Substitutionsfehler.\relax }}{3}{figure.caption.4}
+\contentsline {figure}{\numberline {\relax 1.1}{\ignorespaces Shotgun Sequenzierung: Kopien des DNA-Strangs (oben) werden an zuf\IeC {\"a}lligen Positionen fragmentiert und sequenziert(darunter), in die korrekte Reihenfolge gebracht (3. von oben) und zur Gesamtsequenz zusammengesetzt (unten)\relax }}{2}{figure.caption.3}
+\contentsline {figure}{\numberline {\relax 1.2}{\ignorespaces De Bruijn Graph des Texts \glqq a long long time\grqq . Oben der Graph aus fehlerfreien Fragmenten, unten der fragmentierte Graph, hervorgerufen durch Substitutionsfehler.\relax }}{3}{figure.caption.4}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intakter de Bruijn Graph}}}{3}{figure.caption.4}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Fragmentierter de Bruijn Graph}}}{3}{figure.caption.4}
 \addvspace {10\p@ }

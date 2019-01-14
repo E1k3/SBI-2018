@@ -20,7 +20,7 @@ Gleichzeitig ermöglicht es die parallele Sequenzierung von mehreren Fragmenten,
 % TODO: Quelle
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics{./img/shotgun_sequencing.png}
+		\includegraphics[width=.5\columnwidth]{./img/shotgun_sequencing.png}
 	\end{center}
 	\caption{Shotgun Sequenzierung: Kopien des DNA-Strangs (oben) werden an zufälligen Positionen fragmentiert und sequenziert(darunter), in die korrekte Reihenfolge gebracht (3. von oben) und zur Gesamtsequenz zusammengesetzt (unten)}
 	\label{fig:shotgun-sequencing}
@@ -30,14 +30,14 @@ Die Reihenfolge der DNA-Fragmente aufrecht zu erhalten, ist möglich, aber relat
 Die sogenannten next-gen Sequenzierungsverfahren, welche den aktuell höchsten Durchsatz erzielen, verzichten daher darauf.
 Um trotzdem auf die ursprüngliche Reihenfolge und damit auf die gesamte DNA-Sequenz zurückschließen zu können, wird das Verfahren für mehrere Kopien desselben DNA-Strangs durchgeführt.
 
-Wie in \ref{fig:shotgun-sequencing} zu sehen, trennt man also mehrere Kopien des Strangs an zufälligen Positionen in ungefähr gleich lange Fragmente.
+Wie in Abbildung \ref{fig:shotgun-sequencing} zu sehen, trennt man also mehrere Kopien des Strangs an zufälligen Positionen in ungefähr gleich lange Fragmente.
 Alle Fragmente können dann unabhängig von einander - und damit parallel - sequenziert werden.
 Das Ergebnis der Sequenzierung eines Fragments wird Read genannt.
 Aufgrund der zufälligen Trennungspositionen überlappen sich viele dieser Reads.
 Vorausgesetzt die Abdeckung\footnote{Abdeckung (englisch Coverage) beschreibt die Anzahl einzigartiger Reads, die dieselbe Base enthalten.}
 reicht an allen Stellen der Sequenz aus, kann man mit den Überlappungen die Reads in die ursprüngliche Reihenfolge bringen und so die gesuchte DNA-Sequenz bestimmen.
 %Fußnote Abdeckung/Coverage
-Dieser Prozess heißt \textbf{Assembly}.
+Dieser Prozess heißt Assembly.
 
 Wie bereits erwähnt, sind die aktuellen Verfahren zur Bestimmung der Reads nicht fehlerfrei.
 Es kann zum Überspringen (Deletion) oder Vertauschen (Substitution) richtiger Basen oder zur Einfügung (Insertion) falscher Basen kommen.
@@ -51,7 +51,7 @@ Aus diesem Grund wird bei großen Datenmengen oft auf de Bruijn Graphen mit vorh
 Fehler in den Reads sorgen für verschiedene Probleme bei der Assembly mithilfe eines de Bruijn Graphen:
 \begin{description}
 	\item[Fragmentierte Assembly]\hfill \\
-		Fehlerhafte Reads verhindern das Erkennen von Überlappungen und sorgen für Graphen, die keine valide Assembly zulassen.
+		Fehlerhafte Reads verhindern das Erkennen von Überlappungen und sorgen für Graphen, die keine valide Assembly zulassen. Ein Beispiel für eine fragmentierte Assembly ist in Abbildung \ref{fig:debruijn-fragmented} zu sehen.
 	\item[Misassembly]\hfill \\
 		Fehlerhafte Reads überlappen sich in manchen Fällen mit korrekten Reads und sorgen für eine valide Assembly, die aber eine falsche Sequenz ergibt. \\
 		Dieser Fall ist im Nachhinein schwer zu erkennen.

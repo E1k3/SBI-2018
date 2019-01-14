@@ -1,10 +1,9 @@
 \babel@toc {ngerman}{}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}DNA-Sequenzierung}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Fehlerkorrektur}{2}{section.1.2}
+\contentsline {section}{\numberline {1.2}Fehlerkorrektur}{3}{section.1.2}
 \contentsline {chapter}{\numberline {2}Methodik}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Mathematische Notation}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Algorithmus}{5}{section.2.2}
+\contentsline {section}{\numberline {2.1}Datenstrukturen}{5}{section.2.1}
 \contentsline {chapter}{\numberline {3}Implementierung}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Quelltext-Abschnitte}{7}{section.3.1}
 \contentsline {chapter}{\numberline {4}Ergebnisse}{9}{chapter.4}
