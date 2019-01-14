@@ -1,4 +1,44 @@
 \chapter{Ergebnisse}
 \label{ch:ergebnisse}
 
+FMOE wurde in dem behandelten Paper mit sechs anderen Korrekturalgorithmen vergleichen (siehe Tabelle \ref{tbl:comparison}).
+Alle zählten entweder zu den überlappungsbasierten oder k-mer Frequenzspektrum Verfahren.
 
+\begin{figure}[h]
+	\begin{center}
+		\small
+		\begin{tabular}{ c c c c c }
+			Algorithmus & Erscheinungsjahr & Überlappungsbasiert & k-mer Spektrum & Read Qualität \\
+			\hline
+			FMOE & 2017 & x &   & Nein \\
+			Coral & 2011 & x &   & Ja \\
+			Karect & 2015 & x &   & Ja \\
+			QuorUm & 2015 &   & x & Ja \\
+			RACER & 2013 &   & x & unbkannt \\
+			BLESS2 & 2016 &   & x & Ja \\
+			SGA & unbekannt & x & x & unbekannt \\
+			\hline
+		\end{tabular}
+		\caption{Übersicht der verglichenen Fehlerkorrekturalgorithmen}
+		\label{tbl:comparison}
+	\end{center}
+\end{figure}
+
+Als Testdaten wurden vier Datensätze aus der GAGE-b Datenbank verwendet.
+Die GAGE-b Datenbank enthält Daten aus echten Sequenzierungen, durchgeführt mit den verbreitetsten Sequenzierverfahren.
+Das Ziel der Datenbank ist es, Sequenzierungs-, Assembly- und Korrekturverfahren mit realistischen Anwendungsfällen vergleichbar zu machen.
+
+Die Größe der Datensätze variert zwischen 4,6Mb und 100,2Mb mit Readlängen von 110bp bis 251bp.
+
+Die Güte eines Verfahrens wird im Allgemeinen durch die Korrekturleistung (Menge korrigierter Basen) und die Genauigkeit (Anteil richtiger Korrekturen) bestimmt.
+
+Zu erwarten war, dass die überlappungsbasierten Verfahren - und damit auch FMOE - bei den größeren Read Längen eine höhere Korrekturleistung aufweisen und grundsätzlich, aufgrund des Alignments, deutlich langsamer sind als k-mer Frequenzspektrum basierte Verfahren.
+
+Die Ergebnisse scheinen die Annahme mindestens für FMOE zu bestätigen, denn oft haben Coral oder Karect und besonders häufig hat FMOE relativ hohe Korrekturleistungen bei den Datensätzen mit 251bp Readlänge.
+Die Korrekturleistungen bei Datensätzen mit kurzer Readlänge sind kaum voneinander zu unterscheiden.
+
+Bis auf einen Aussetzer von Coral bewegt sich die Identität der korrigierten Datensätze mit dem korrekten Genom in allen Fällen deutlich über den Rohdaten.
+
+Die Laufzeit der k-mer basierten Methoden beträgt, wie erwartet nur einen Bruchteil der Laufzeit der überlappungsbasierten Verfahren.
+Der Unterschied zwischen Coral auf der einen und Karect und FMOE auf der anderen Seite ist allerdings enorm.
+Die längste Laufzeit von Coral beträgt 43 Stunden, während Karect und FMOE für denselben Datensatz ca. 2 Stunden benötigen.

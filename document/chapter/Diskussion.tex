@@ -1,4 +1,37 @@
-\chapter{Diskussion}
+\chapter{Diskussion und Fazit}
 \label{ch:diskussion}
 
-In diesem Kapitel werden die zuvor vorgestellten Ergebnisse der Arbeit diskutiert. Häufig wird es mit dem Fazit zusammengelegt.
+Das behandelte Paper stellt FMOE im Detail vor und erläutert die Funktionsweise an vielen Stellen sehr anschaulich.
+
+An einigen Stellen fehlen allerdings Details:
+\begin{description}
+	\item[Qualität der Reads]\hfill\\
+		Aktuelle Sequenzierungsverfahren stellen nicht nur die rohen Reads zur Verfügung, sondern auch weitere relevante Daten.
+		Unter anderem ist im Normalfall ebenso eine Qualitätsmetrik für jeden einzelnen Read oder sogar jede Base enthalten.
+		Diese ermöglicht es, die Fehlerwahrscheinlichkeit der Basen des Reads einzuschätzen und so Basen mit hohen Fehlerquoten bei der Korrektur oder Statistik schwächer zu gewichten.
+		%cite blog bfc
+
+		Das Paper gibt keinen Aufschluss darüber, ob FMOE diese Daten ignoriert, andere Verfahren nutzen Sie allerdings erfolgreich (siehe \ref{tbl:comparison}).
+
+	\item[Stichprobemgröße]\hfill\\
+		Die Größe der k-mer Stichprobe ist laut dem Paper konstant vorgegeben.
+		Das kann bei großen Datensätzen für Probleme sorgen, da eine relativ kleine Stichprobe die Daten nicht mehr ausreichend repräsentieren kann.
+
+		Ob FMOE eine Möglichkeit bietet, diese Größe anzupassen oder sie dynamisch angepasst wird, ist nicht durch das Paper ersichtlich.
+	
+	\item[Einstellungen der konkurrierenden Algorithmen]\hfill\\
+		Das Paper enthält keine Informationen über die verwendeten Einstellungen bei den Vergleichsverfahren.
+
+		Das SGA Paket bietet mehrere Fehlerkorrekturalgrithmen an.
+		%TODO:cite comparison master thesis
+		Hier ist nicht klar, welches dieser Verfahren angewendet wurde.
+
+	\item[Darstellung der Ergebnisse]\hfill\\
+		Die Ergebnisse des Vergleichs befinden sich in vielen Fällen in den letzten zwei Nachkommastellen und sind daher selbst bei so geringen Mengen schwer zu überblicken.
+
+		An dieser Stelle währe eine andere Skalierung oder eine Visualisierung durch Graphen übersichtlicher gewesen.
+\end{description}
+
+Abgesehen davon macht das Paper aber einen guten Eindruck.
+
+Besonders die Verwendung von GAGE-b Datensätzen für den Vergleich der Verfahren ist lobenswert, da hier auf synthetische Datensätze verzichtet wurde.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.1.13)  14 JAN 2019 23:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.1.13)  15 JAN 2019 00:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -899,8 +899,7 @@ Package: xparse 2018-10-17 L3 Experimental document command parser
 )
 (./Hauptdokument.aux (./chapter/Titelblatt.aux) (./chapter/Abstract.aux)
 (./chapter/Einleitung.aux) (./chapter/Methodik.aux) (./chapter/Ergebnisse.aux)
-(./chapter/Diskussion.aux) (./chapter/Fazit.aux)
-(./chapter/EidesstattlicheErklaerung.aux))
+(./chapter/Diskussion.aux) (./chapter/Fazit.aux))
 \openout1 = `Hauptdokument.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
@@ -1170,17 +1169,34 @@ Package pdftex.def Info: ./img/k-mer_voting.png  used on input line 458.
 
 ]
 chapter 3.
-) [15]
+
+Overfull \hbox (43.78683pt too wide) in paragraph at lines 4--6
+\OT1/cmr/m/n/12 men ver-glei-chen (sie-he Ta-bel-le []3.1[]). Al-le z[]ahlten e
+nt-we-der zu den []uberlappungsbasierten
+ []
+
+
+Overfull \hbox (47.55817pt too wide) in paragraph at lines 10--22
+ [] 
+ []
+
+
+Overfull \hbox (12.28773pt too wide) in paragraph at lines 31--32
+[]\OT1/cmr/m/n/12 Die Gr[]o^^Ye der Da-tens[]atze va-riert zwi-schen 4,6Mb und 
+100,2Mb mit Readl[]angen
+ []
+
+) [15] [16]
 \openout2 = `chapter/Diskussion.aux'.
 
- (./chapter/Diskussion.tex [16
+ (./chapter/Diskussion.tex
+chapter 4.
+) [17
 
 
 
 
 ]
-chapter 4.
-) [17]
 \openout2 = `chapter/Fazit.aux'.
 
  (./chapter/Fazit.tex [18
@@ -1208,10 +1224,10 @@ Package rerunfilecheck Info: File `Hauptdokument.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 31613 strings out of 492639
- 590718 string characters out of 6135497
- 784328 words of memory out of 5000000
- 34976 multiletter control sequences out of 15000+600000
+ 31604 strings out of 492639
+ 590511 string characters out of 6135497
+ 783833 words of memory out of 5000000
+ 34970 multiletter control sequences out of 15000+600000
  544531 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,12n,76p,9092b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1226,10 +1242,10 @@ dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1
 /cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.p
 fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Hauptdokument.pdf (27 pages, 837019 bytes).
+Output written on Hauptdokument.pdf (27 pages, 841992 bytes).
 PDF statistics:
- 342 PDF objects out of 1000 (max. 8388607)
- 282 compressed objects within 3 object streams
+ 343 PDF objects out of 1000 (max. 8388607)
+ 283 compressed objects within 3 object streams
  76 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
