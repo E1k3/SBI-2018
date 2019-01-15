@@ -1,14 +1,14 @@
 \chapter{Methodik}
 \label{ch:methodik}
 
-FMOE fällt in die dritte Kategorie und unterscheidet sich von anderen Verfahren derselben Kategorie hauptsächlich durch die Verwendung von FM-Index und damit verbundenen Optimierungen.
+FMOE fällt in die dritte Kategorie und unterscheidet sich von anderen Verfahren derselben Kategorie hauptsächlich durch die Verwendung einer FM-Index Implementierung \cite{FmIndexImpl} und damit verbundenen Optimierungen.
 
 Im Folgenden werden daher zuerst die Datenstrukturen behandelt.
 
 \section{Datenstrukturen}
 \label{sec:datenstrukturen}
 
-Der FM-index ist eine Datenstruktur für Zeichenfolgen, die auf der Burrows Wheeler Transformation (BWT) basiert.
+Der FM-index \cite{FmIndex} \cite{FmIndexUsage} ist eine Datenstruktur für Zeichenfolgen, die auf der Burrows Wheeler Transformation \cite{BurrowsWheeler} (BWT) basiert.
 
 Die BWT ist ein Algorithmus, der aus einer beliebigen Zeichenfolge eine Permutation dieser Folge und einen Index erzeugt, mit dem Effekt, dass die erhaltene Permutation in der Regel leichter zu komprimieren ist.
 Eine Rücktransformation ermöglicht dann die Wiederherstellung der ursprünglichen Zeichenfolge.
@@ -262,7 +262,7 @@ Das selbe Beispiel: Suche nach \glqq att\grqq (siehe auch Tabelle \ref{tbl:fm-in
 
 Per LF-Mapping ist man mit den erwähnten Optimierungen also in der Lage mit geringer Komplexität nach Patterns zu suchen und die Speichereffizienz ermöglicht es im Vergleich zum Suffix-Array bei der selben Speichermenge deutlich größere Datenmengen zu verarbeiten.
 
-Ein FM-Index des Menschlichen Genoms (ca. 3Mbp\footnote{Mbp steht für Mega Basenpaare, also 1 Milliarde Basenpaare} mit 2 Bits pro Base) braucht ca. 1,5GB Speicher, während ein Suffix-Array ca. 12GB braucht.
+Ein FM-Index des Menschlichen Genoms (ca. 3Mbp\footnote{Mbp steht für Mega Basenpaare, also 1 Milliarde Basenpaare} mit 2 Bits pro Base) braucht ca. 1,5GB Speicher, während ein Suffix-Array ca. 12GB braucht \cite{FmIndexLecture}.
 
 \section{Fehlerkorrektur}
 \label{sec:methodik-fehlerkorrektur}
@@ -330,7 +330,7 @@ Nun werden in dem normalen FM-Index alle Reads gesucht, die den Seed enthalten. 
 \label{subsec:alignment}
 
 Zusammen mit dem vorherigen Schritt wird diese Art von Alignment als Seed-and-Extend Strategie bezeichnet.
-Bereits vor dem erscheinen von FMOE wurde die FM-Index Variante dieser Strategie in der Bioinformatik verwendet.
+Bereits vor dem erscheinen von FMOE wurde die FM-Index Variante \cite{FmIndexExtension} dieser Strategie in der Bioinformatik verwendet.
 %Quelle Fm-Index Extension
 Nachdem alle Reads mit dem Seed gefunden wurden, beginnt hier also die Extension Phase.
 

@@ -5,14 +5,14 @@ DNA Sequenzierung ist aus der biologischen und medizinischen Forschung nicht meh
 Die Entwicklung immer günstigerer und leistungsstärkerer Sequenzierungsverfahren hat in den letzten Jahrzenten für einen rapiden Anstieg der zu verarbeitenden Datenmengen gesorgt.
 Hinzu kommt, dass die verwendeten Verfahren nicht fehlerfrei sind, was die Verarbeitung der Daten weiter erschwert.
 
-In dieser Arbeit wird ein Paper behandelt, in dem der Fehlerkorrekturalgorithmus FMOE vorgestellt wird.
+In dieser Arbeit wird ein Paper \cite{Huang} \cite{Huang2} behandelt, in dem der Fehlerkorrekturalgorithmus FMOE vorgestellt wird.
 Zu erst wird aber der Hintergrund in den Bereichen Biologie und Bioinformatik erläutert.
 
 \section{DNA-Sequenzierung}
 \label{s:dna-seq} 
 
 Das Ziel der de-novo DNA-Sequenzierung ist die Bestimmung der Nukleotidfolge in DNA ohne ein bereits bekanntes Referenzgenom.
-Wo bei alten Verfahren noch alle Basen nacheinander bestimmt wurden, werden seit dem sogenannten Shotgun Sequencing viele Teilstücke der DNA parallel analysiert.
+Wo bei alten Verfahren noch alle Basen nacheinander bestimmt wurden, werden seit dem sogenannten Shotgun Sequencing\cite{Staden} \cite{Anderson} viele Teilstücke der DNA parallel analysiert.
 Das macht es möglich, lange DNA Stränge mit Verfahren zu sequenzieren, die nur kurze Fragmente verarbeiten können. %TODO Beispiel Illumina: 150-300bp per read
 Gleichzeitig ermöglicht es die parallele Sequenzierung von mehreren Fragmenten, was den Vorgang extrem beschleunigt.
 
@@ -22,7 +22,7 @@ Gleichzeitig ermöglicht es die parallele Sequenzierung von mehreren Fragmenten,
 	\begin{center}
 		\includegraphics[width=.5\columnwidth]{./img/shotgun_sequencing.png}
 	\end{center}
-	\caption{Shotgun Sequenzierung: Kopien des DNA-Strangs (oben) werden an zufälligen Positionen fragmentiert und sequenziert(darunter), in die korrekte Reihenfolge gebracht (3. von oben) und zur Gesamtsequenz zusammengesetzt (unten)}
+	\caption{Shotgun Sequenzierung: Kopien des DNA-Strangs (oben) werden an zufälligen Positionen fragmentiert und sequenziert(darunter), in die korrekte Reihenfolge gebracht (3. von oben) und zur Gesamtsequenz zusammengesetzt (unten). Quelle \cite{ShotgunImage}}
 	\label{fig:shotgun-sequencing}
 \end{figure}
 
